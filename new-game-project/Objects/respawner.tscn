@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcb1wsrbb3jam"]
+
+[ext_resource type="Script" uid="uid://cxxnyf8t0370q" path="res://Scripts/respawner.gd" id="1_whgcx"]
+[ext_resource type="PackedScene" uid="uid://huaap2tk3ip0" path="res://Objects/enemy.tscn" id="2_lqv5s"]
+
+[node name="Respawner" type="Node3D"]
+script = ExtResource("1_whgcx")
+enemy = ExtResource("2_lqv5s")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

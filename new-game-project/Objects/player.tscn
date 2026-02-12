@@ -91,7 +91,7 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_0ad8t"]
 size = Vector3(1, 1.5827637, 1)
 
-[node name="player" type="CharacterBody3D"]
+[node name="player" type="CharacterBody3D" groups=["player"]]
 script = ExtResource("1_y0qk3")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

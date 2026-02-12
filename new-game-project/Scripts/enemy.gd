@@ -45,7 +45,7 @@ func _physics_process(delta):
 func enemy():
 	pass
 
-func _process(delta):
+func _process(_delta):
 	if hp <= 0:
 		state = States.die
 

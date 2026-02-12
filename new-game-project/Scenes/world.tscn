@@ -1,6 +1,7 @@
-[gd_scene load_steps=23 format=3 uid="uid://ckavqb25bdaul"]
+[gd_scene load_steps=24 format=3 uid="uid://ckavqb25bdaul"]
 
 [ext_resource type="ArrayMesh" uid="uid://oxvhfb3u0fke" path="res://Models/grass.res" id="1_5v1tr"]
+[ext_resource type="Script" uid="uid://3juowod54gdk" path="res://Scripts/WorldArea.gd" id="1_7yui6"]
 [ext_resource type="PackedScene" uid="uid://d00gyfo0xr487" path="res://Objects/player.tscn" id="1_a02cp"]
 [ext_resource type="PackedScene" uid="uid://ob56erprxaea" path="res://Models/tavern.glb" id="2_go701"]
 [ext_resource type="PackedScene" uid="uid://c0ujsaiuma67m" path="res://Models/CliffProps/cliffProps1.glb" id="3_o06y3"]
@@ -55,9 +56,11 @@ volumetric_fog_enabled = true
 volumetric_fog_density = 0.007
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_c5t2i"]
-size = Vector3(3.525238, 3.9884033, 1)
+size = Vector3(0.001, 2.873108, 1)
 
 [node name="World" type="Node3D"]
+script = ExtResource("1_7yui6")
+metadata/_custom_type_script = "uid://3juowod54gdk"
 
 [node name="CaveEntrince" type="StaticBody3D" parent="."]
 
@@ -1095,10 +1098,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6707504, 15.176694)
 
 [node name="ChangeArea" parent="." instance=ExtResource("11_7yui6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.847636, 0, 24.971714)
+currentAreaType = 1
+changeAreaType = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ChangeArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9975405, 1.4942017, 0.21788025)
 shape = SubResource("BoxShape3D_c5t2i")
 
-[node name="Marker3D" type="Marker3D" parent="ChangeArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1642551, 0, -3.2998257)
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.68059, 0, -21.497616)
+
+[node name="ChangeArea2" parent="." instance=ExtResource("11_7yui6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.598154, 0.3233782, -14.31117)
+currentAreaType = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ChangeArea2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04795742, 0.93655396, 0.21788025)
+shape = SubResource("BoxShape3D_c5t2i")

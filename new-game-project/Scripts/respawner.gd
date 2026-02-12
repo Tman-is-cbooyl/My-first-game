@@ -4,7 +4,7 @@ extends Node3D
 
 var timerStarded = false
 
-func _process(delta):
+func _process(_delta):
 	if get_child_count() <= 1 and timerStarded == false:
 		$Timer.start()
 		timerStarded = true

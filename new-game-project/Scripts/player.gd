@@ -20,7 +20,6 @@ var target = []
 @onready var cooldown = $AttackCoolDown
 
 func _ready():
-	add_to_group("player")
 	hpBar.max_value = 100
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
@@ -33,7 +32,7 @@ func _unhandled_input(event):
 		camera.rotate_x(-event.relative.y * sensivity)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-60), deg_to_rad(70))
 
-func _process(delta):
+func _process(_delta):
 	update_HUD()
 	attack()
 	if Input.is_action_just_pressed("escape"):

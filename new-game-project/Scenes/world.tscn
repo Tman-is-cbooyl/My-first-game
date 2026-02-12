@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://ckavqb25bdaul"]
+[gd_scene load_steps=32 format=3 uid="uid://ckavqb25bdaul"]
 
 [ext_resource type="ArrayMesh" uid="uid://oxvhfb3u0fke" path="res://Models/grass.res" id="1_5v1tr"]
 [ext_resource type="Script" uid="uid://3juowod54gdk" path="res://Scripts/WorldArea.gd" id="1_7yui6"]
@@ -12,13 +12,28 @@
 [ext_resource type="PackedScene" uid="uid://db6dwmakt0k1o" path="res://Scenes/tree.tscn" id="8_k7acu"]
 [ext_resource type="PackedScene" uid="uid://bb4ts31g2i5tn" path="res://Scripts/change_area.tscn" id="11_7yui6"]
 [ext_resource type="PackedScene" uid="uid://bcb1wsrbb3jam" path="res://Objects/respawner.tscn" id="11_ikia7"]
+[ext_resource type="PackedScene" uid="uid://1thhgrrd8qyq" path="res://Models/tavernprops/crate.glb" id="13_c5t2i"]
+[ext_resource type="PackedScene" uid="uid://hxlqajfh2lnc" path="res://Models/tavernprops/torch.glb" id="14_e0ngr"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_0fj1v"]
-size = Vector3(1, 7.837036, 11.503418)
+[sub_resource type="BoxMesh" id="BoxMesh_7yui6"]
+size = Vector3(5, 1, 5)
+
+[sub_resource type="Skin" id="Skin_c5t2i"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e0ngr"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_c5t2i"]
+size = Vector3(5, 4, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kn0ld"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e0ngr"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_0fj1v"]
-vertices = PackedVector3Array(-24.5, 0.5, -24.5, -24.5, 0.5, 24.5, 24.5, 0.5, 24.5, 24.5, 0.5, -24.5)
-polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+vertices = PackedVector3Array(10.75, 0.5, -12.5, 11, 0.75, -14.25, 7, 0.5, -14.25, 11.25, 0.5, -12, -24.5, 0.5, -24.5, -24.5, 0.5, 24.5, 24.5, 0.5, 24.5, 6.75, 0.5, -19.5, 7.5, 0.5, -20, 7.5, 0.5, -24.5, 24.5, 0.5, -13.75, 14.75, 0.5, -13.25, 14.25, 0.5, -12, 14, 0.5, -20, 14, 0.5, -24.5, 14.75, 0.5, -19.5, 24.5, 0.5, -24.5, 12.5, 0.5, -15.75, 12.5, 0.5, -14, 13, 0.5, -13.75, 13, 0.5, -18.25, 8.5, 0.5, -18.25, 8.5, 0.5, -15.75, 12, 5.25, -15, 12, 4, -13.25, 13.5, 4, -13.25, 13.5, 5.5, -15)
+polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(0, 3, 2), PackedInt32Array(2, 3, 4), PackedInt32Array(4, 3, 5), PackedInt32Array(5, 3, 6), PackedInt32Array(8, 7, 9), PackedInt32Array(9, 7, 4), PackedInt32Array(11, 10, 12), PackedInt32Array(12, 10, 6), PackedInt32Array(3, 12, 6), PackedInt32Array(4, 7, 2), PackedInt32Array(9, 14, 8), PackedInt32Array(8, 14, 13), PackedInt32Array(13, 14, 15), PackedInt32Array(15, 14, 16), PackedInt32Array(11, 15, 10), PackedInt32Array(10, 15, 16), PackedInt32Array(18, 17, 19), PackedInt32Array(19, 17, 20), PackedInt32Array(22, 21, 17), PackedInt32Array(17, 21, 20), PackedInt32Array(26, 25, 23), PackedInt32Array(23, 25, 24)]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5a7ea"]
 albedo_color = Color(0.17796966, 0.3472365, 0, 1)
@@ -56,7 +71,10 @@ volumetric_fog_enabled = true
 volumetric_fog_density = 0.007
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_c5t2i"]
-size = Vector3(0.001, 2.873108, 1)
+size = Vector3(3.3923368, 3.2346344, 0.001)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7yui6"]
+size = Vector3(1, 2.559021, 0.94744873)
 
 [node name="World" type="Node3D"]
 script = ExtResource("1_7yui6")
@@ -83,15 +101,59 @@ transform = Transform3D(0.103612125, 0.15476212, -0.98250365, -0.016230779, 0.98
 [node name="cliffProps3" parent="CaveEntrince/Cave2" instance=ExtResource("4_k7acu")]
 transform = Transform3D(-0.58661264, 0, -0.8098677, 0, 1, 0, 0.8098677, 0, -0.58661264, 9.274806, 0.5538746, 26.416819)
 
+[node name="cliffProps4" parent="CaveEntrince/Cave2" instance=ExtResource("4_k7acu")]
+transform = Transform3D(-0.3383528, -0.35463938, -0.87163544, -0.1190394, -0.9026954, 0.4134856, -0.9334596, 0.24366291, 0.2632135, 9.575245, 1.0741559, 26.61703)
+
 [node name="Cave3" type="Node3D" parent="CaveEntrince"]
+
+[node name="cliffProps3" parent="CaveEntrince/Cave3" instance=ExtResource("5_5v1tr")]
+transform = Transform3D(0.5201602, 0, 0.8540687, 0, 1, 0, -0.8540687, 0, 0.5201602, 4.5191464, 0.02134931, 25.589146)
+
+[node name="cliffProps4" parent="CaveEntrince/Cave3" instance=ExtResource("5_5v1tr")]
+transform = Transform3D(0.5201602, 0, 0.8540687, 0, 1, 0, -0.8540687, 0, 0.5201602, 4.5191464, 0.40944076, 27.681273)
 
 [node name="Cave4" type="Node3D" parent="CaveEntrince"]
 
+[node name="cliffProps4" parent="CaveEntrince/Cave4" instance=ExtResource("6_0fj1v")]
+transform = Transform3D(-0.14131592, 0, 0.98996454, 0, 1, 0, -0.98996454, 0, -0.14131592, 4.8023643, 0.19697046, 28.075495)
+
+[node name="cliffProps5" parent="CaveEntrince/Cave4" instance=ExtResource("6_0fj1v")]
+transform = Transform3D(-0.14131592, 0, 0.98996454, 0, 1, 0, -0.98996454, 0, -0.14131592, 5.810541, 2.3108265, 28.075495)
+
+[node name="cliffProps6" parent="CaveEntrince/Cave4" instance=ExtResource("6_0fj1v")]
+transform = Transform3D(-0.14131592, 0, 0.98996454, 0, 1, 0, -0.98996454, 0, -0.14131592, 7.242793, 2.9656086, 28.075495)
+
+[node name="cliffProps7" parent="CaveEntrince/Cave4" instance=ExtResource("6_0fj1v")]
+transform = Transform3D(-0.14131592, 0, 0.98996454, 0, 1, 0, -0.98996454, 0, -0.14131592, 8.45769, 3.1614923, 28.075495)
+
+[node name="cliffProps8" parent="CaveEntrince/Cave4" instance=ExtResource("6_0fj1v")]
+transform = Transform3D(-0.14131592, 0, 0.98996454, 0, 1, 0, -0.98996454, 0, -0.14131592, 9.629928, 0.5313839, 28.078028)
+
+[node name="cliffProps9" parent="CaveEntrince/Cave4" instance=ExtResource("6_0fj1v")]
+transform = Transform3D(0.9981624, 0, 0.060595557, 0, 1, 0, -0.060595557, 0, 0.9981624, 7.187972, -2.2604084, 25.399721)
+
+[node name="cliffProps10" parent="CaveEntrince/Cave4" instance=ExtResource("6_0fj1v")]
+transform = Transform3D(0.9686382, -0.057469252, 0.2417379, 0.057193335, 0.9983297, 0.008164261, -0.24180332, 0.005917579, 0.9703071, 7.3899946, -2.7425046, 26.13665)
+
+[node name="cliffProps11" parent="CaveEntrince/Cave4" instance=ExtResource("6_0fj1v")]
+transform = Transform3D(0.8795987, 0, 0.47571638, 0, 1, 0, -0.47571638, 0, 0.8795987, 7.663619, -3.127834, 26.779655)
+
 [node name="Cave5" type="Node3D" parent="CaveEntrince"]
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CaveEntrince"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.7601237, -1.5617495, 27.698557)
+mesh = SubResource("BoxMesh_7yui6")
+skin = SubResource("Skin_c5t2i")
+surface_material_override/0 = SubResource("StandardMaterial3D_e0ngr")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="CaveEntrince"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.753734, -0.061134577, 29.676882)
+mesh = SubResource("BoxMesh_c5t2i")
+surface_material_override/0 = SubResource("StandardMaterial3D_kn0ld")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CaveEntrince"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.400772, 3.418518, 33.070877)
-shape = SubResource("BoxShape3D_0fj1v")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 54.511612)
+shape = SubResource("BoxShape3D_e0ngr")
 
 [node name="Floor" type="StaticBody3D" parent="."]
 
@@ -116,7 +178,7 @@ material_override = SubResource("StandardMaterial3D_0fj1v")
 multimesh = SubResource("MultiMesh_ikia7")
 
 [node name="player" parent="." instance=ExtResource("1_a02cp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2495439, 0)
+transform = Transform3D(-0.9977327, 0, 0.067301296, 0, 1, 0, -0.067301296, 0, -0.9977327, 0, 1.2495439, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.019079685, 26.003155, -0.0010552108)
@@ -1093,25 +1155,47 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.615992, -0.017914534, 10.96
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_5v1tr")
 
-[node name="Respawner" parent="." instance=ExtResource("11_ikia7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6707504, 15.176694)
-
 [node name="ChangeArea" parent="." instance=ExtResource("11_7yui6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.847636, 0, 24.971714)
 currentAreaType = 1
 changeAreaType = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ChangeArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9975405, 1.4942017, 0.21788025)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8853507, 1.5189743, -0.1244297)
 shape = SubResource("BoxShape3D_c5t2i")
 
 [node name="Marker3D" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.68059, 0, -21.497616)
 
+[node name="enemys" type="Node3D" parent="."]
+
+[node name="Respawner2" parent="enemys" instance=ExtResource("11_ikia7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.438599, 0, 12.8711605)
+
+[node name="Respawner" parent="enemys" instance=ExtResource("11_ikia7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15.059894)
+
 [node name="ChangeArea2" parent="." instance=ExtResource("11_7yui6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.598154, 0.3233782, -14.31117)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.847636, 0, -11.606899)
 currentAreaType = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ChangeArea2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04795742, 0.93655396, 0.21788025)
-shape = SubResource("BoxShape3D_c5t2i")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1533766, 1.553892, -2.4895086)
+shape = SubResource("BoxShape3D_7yui6")
+
+[node name="odds and ends" type="Node3D" parent="."]
+
+[node name="crate" parent="odds and ends" instance=ExtResource("13_c5t2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.354624, 0.028210878, -12.319215)
+
+[node name="torch2" parent="odds and ends" instance=ExtResource("14_e0ngr")]
+transform = Transform3D(0.91981477, -0.39235324, 0, 0.39235324, 0.91981477, 0, 0, 0, 1, 7.7191195, 2.29873, -18.261961)
+
+[node name="crate3" parent="odds and ends" instance=ExtResource("13_c5t2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.85929, 1.0510389, -12.335771)
+
+[node name="torch" parent="odds and ends" instance=ExtResource("14_e0ngr")]
+transform = Transform3D(0.91981477, -0.39235324, 0, 0.39235324, 0.91981477, 0, 0, 0, 1, 7.7191195, 2.29873, -15.61758)
+
+[node name="crate2" parent="odds and ends" instance=ExtResource("13_c5t2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.272441, 0.028210878, -12.328113)

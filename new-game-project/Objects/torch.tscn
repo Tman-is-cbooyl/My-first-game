@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dak1xhppfmjx2"]
+
+[ext_resource type="PackedScene" uid="uid://hxlqajfh2lnc" path="res://Models/tavernprops/torch.glb" id="1_8ocvk"]
+
+[node name="torch" instance=ExtResource("1_8ocvk")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.36484239, 0)
+light_color = Color(0.8117722, 0.3967931, 1.8674731e-05, 1)
+light_energy = 12.0
+omni_range = 9.387294

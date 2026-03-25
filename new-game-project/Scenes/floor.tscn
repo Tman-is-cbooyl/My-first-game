@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://jnpnivfmxspj"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_nvnu3"]
+size = Vector3(12, 1, 50)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_agfsv"]
+albedo_color = Color(0, 0, 0, 0)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wjf51"]
+size = Vector3(12, 1, 50)
+
+[node name="NavigationRegion3D2" type="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.9073486e-06)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.0045204447, 0, -0.9999898, 0, 1, 0, 0.9999898, 0, -0.0045204447, 17.080318, 0, -24.679636)
+mesh = SubResource("BoxMesh_nvnu3")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_agfsv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(-0.004520445, 0, -0.9999899, 0, 1, 0, 0.9999899, 0, -0.004520445, 17.20716, 0, -24.617582)
+shape = SubResource("BoxShape3D_wjf51")

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://wnbkp5717wrx"
-path="res://.godot/imported/GobelinExport.blend-d54c52b57509d5f7080e98caf49931ae.scn"
+uid="uid://c1b1mjgp5gvy5"
+path="res://.godot/imported/shelf.blend-64ce84992f9e2c607456ef877d0b2501.scn"
 
 [deps]
 
-source_file="res://GobelinExport.blend"
-dest_files=["res://.godot/imported/GobelinExport.blend-d54c52b57509d5f7080e98caf49931ae.scn"]
+source_file="res://Models/tavernprops/shelf.blend"
+dest_files=["res://.godot/imported/shelf.blend-64ce84992f9e2c607456ef877d0b2501.scn"]
 
 [params]
 

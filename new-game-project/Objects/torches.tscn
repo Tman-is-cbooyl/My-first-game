@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://bonnleeificmx"]
+
+[ext_resource type="PackedScene" uid="uid://dak1xhppfmjx2" path="res://Objects/torch.tscn" id="1_d650u"]
+
+[node name="Torches" type="Node3D"]
+
+[node name="torch" parent="." instance=ExtResource("1_d650u")]
+transform = Transform3D(0.8642661, -0.50303507, 0, 0.50303507, 0.8642661, 0, 0, 0, 1, 5.6028743, 2.487284, 1.1582739)
+
+[node name="torch2" parent="." instance=ExtResource("1_d650u")]
+transform = Transform3D(0.8642661, -0.50303507, 0, 0.50303507, 0.8642661, 0, 0, 0, 1, 5.6028743, 2.487284, 12.143671)
+
+[node name="torch3" parent="." instance=ExtResource("1_d650u")]
+transform = Transform3D(0.8642661, -0.50303507, 0, 0.50303507, 0.8642661, 0, 0, 0, 1, 5.419466, 2.487284, -8.578506)
+
+[node name="torch4" parent="." instance=ExtResource("1_d650u")]
+transform = Transform3D(0.8642661, -0.50303507, 0, 0.50303507, 0.8642661, 0, 0, 0, 1, 5.2285905, 2.487284, -16.780407)
+
+[node name="torch5" parent="." instance=ExtResource("1_d650u")]
+transform = Transform3D(-0.86416, 0.5029733, 0.01567249, 0.50303507, 0.8642661, 0, -0.013545202, 0.007883812, -0.9998773, -6.606122, 2.487284, -2.083036)
+
+[node name="torch6" parent="." instance=ExtResource("1_d650u")]
+transform = Transform3D(-0.86416, 0.5029733, 0.01567249, 0.50303507, 0.8642661, 0, -0.013545202, 0.007883812, -0.9998773, -6.4339542, 2.487284, -13.067085)
+
+[node name="torch7" parent="." instance=ExtResource("1_d650u")]
+transform = Transform3D(-0.86416, 0.5029733, 0.01567249, 0.50303507, 0.8642661, 0, -0.013545202, 0.007883812, -0.9998773, -6.5753365, 2.487284, 7.655424)
+
+[node name="torch8" parent="." instance=ExtResource("1_d650u")]
+transform = Transform3D(-0.86416, 0.5029733, 0.01567249, 0.50303507, 0.8642661, 0, -0.013545202, 0.007883812, -0.9998773, -6.513028, 2.487284, 15.859308)

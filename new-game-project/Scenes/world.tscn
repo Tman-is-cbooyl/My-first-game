@@ -178,7 +178,7 @@ material_override = SubResource("StandardMaterial3D_0fj1v")
 multimesh = SubResource("MultiMesh_ikia7")
 
 [node name="player" parent="." instance=ExtResource("1_a02cp")]
-transform = Transform3D(-0.9977327, 0, 0.067301296, 0, 1, 0, -0.067301296, 0, -0.9977327, 0, 1.2495439, 0)
+transform = Transform3D(-0.9977327, 0, 0.067301296, 0.0077634226, 0.9933245, 0.115091704, -0.066852026, 0.11535324, -0.99107236, -6.1012225, 1.2495439, -21.226294)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.019079685, 26.003155, -0.0010552108)

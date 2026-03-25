@@ -7,7 +7,10 @@ extends Area3D
 func _ready() -> void:
 	add_to_group("changeArea")
 
+func change_scene(scn: String) -> void:
+	get_tree().change_scene_to_file(scn)
+
 func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
 		GameManager.change_area(currentAreaType)
-		get_tree().change_scene_to_file(GameManager.areaDict[changeAreaType])
+		call_deferred("change_scene", GameManager.areaDict[changeAreaType])

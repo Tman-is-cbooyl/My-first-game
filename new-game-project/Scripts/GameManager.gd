@@ -10,5 +10,14 @@ var areaDict = {
 
 var lastArea: Area_Type
 
+var health: float
+var max_health: float
+var stamina: float
+var damage: float
+var coin_mult: int
+
+func _ready() -> void:
+	pass
+
 func change_area(currentArea: Area_Type):
-	lastArea = currentArea
+	pass

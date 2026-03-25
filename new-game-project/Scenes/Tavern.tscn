@@ -162,7 +162,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14812756, 0, 14.878193)
 
 [node name="ChangeArea" parent="." instance=ExtResource("4_8ea0k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1357737, 0, 13.508501)
-changeAreaType = 1
+scene_path = "res://Scenes/world.tscn"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ChangeArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.408929, 0.7367554, 3.7164783)

@@ -23841,8 +23841,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14812756, 1.5137477, 12.395
 
 [node name="ChangeArea" parent="." instance=ExtResource("4_ofyxu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1357737, 0, 13.508501)
-currentAreaType = 2
-changeAreaType = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ChangeArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.142167, -0.12835693, 4.6633625)

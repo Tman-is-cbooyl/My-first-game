@@ -1157,8 +1157,7 @@ environment = SubResource("Environment_5v1tr")
 
 [node name="ChangeArea" parent="." instance=ExtResource("11_7yui6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.847636, 0, 24.971714)
-currentAreaType = 1
-changeAreaType = 2
+scene_path = "res://Scenes/Cave.tscn"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ChangeArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8853507, 1.5189743, -0.1244297)
@@ -1177,7 +1176,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15.059894)
 
 [node name="ChangeArea2" parent="." instance=ExtResource("11_7yui6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.847636, 0, -11.606899)
-currentAreaType = 1
+scene_path = "res://Scenes/Tavern.tscn"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ChangeArea2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1533766, 1.553892, -2.4895086)

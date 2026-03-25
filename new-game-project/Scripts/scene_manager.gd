@@ -1,6 +1,9 @@
 class_name scene_manager
 extends Node
 
+var health
+
+
 # --- LIFECYCLE ---
 func _ready() -> void:
 	setup()
@@ -8,7 +11,7 @@ func _ready() -> void:
 # --- INITIALIZATION ---
 func setup() -> void:
 	# Loads and adds the main office scene when the game starts.
-	add_scene("res://scenes/main_menu.tscn")
+	add_scene("res://Scenes/world.tscn")
 
 # --- SCENE MANAGEMENT ---
 func add_scene(scene_path: String) -> void:
@@ -26,6 +29,5 @@ func remove_scene(tree_path: String) -> void:
 	scene.queue_free()
 
 func change_scene(old_tree_path: String, new_path: String) -> void:
-	add_scene("res://scenes/loading_screen.tscn")
 	add_scene(new_path)
 	remove_scene(old_tree_path)

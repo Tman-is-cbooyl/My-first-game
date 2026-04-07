@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c0ujsaiuma67m" path="res://Models/CliffProps/cliffProps1.glb" id="3_kpbna"]
 [ext_resource type="PackedScene" uid="uid://jnpnivfmxspj" path="res://Scenes/floor.tscn" id="3_ofyxu"]
 [ext_resource type="PackedScene" uid="uid://dhm5mqi1417w1" path="res://Models/CliffProps/cliffProps3.glb" id="4_gsklp"]
-[ext_resource type="PackedScene" uid="uid://bb4ts31g2i5tn" path="res://Scripts/change_area.tscn" id="4_ofyxu"]
+[ext_resource type="PackedScene" uid="uid://bb4ts31g2i5tn" path="res://Scenes/change_area.tscn" id="4_ofyxu"]
 [ext_resource type="PackedScene" uid="uid://co17webl6iwl0" path="res://Models/CliffProps/cliffProps4.glb" id="5_ri4iq"]
 [ext_resource type="PackedScene" uid="uid://b0yes6731b4cr" path="res://Models/CliffProps/cliffProps5.glb" id="6_v4f15"]
 [ext_resource type="PackedScene" uid="uid://caplxa21c11c3" path="res://Objects/corners.tscn" id="7_ri4iq"]

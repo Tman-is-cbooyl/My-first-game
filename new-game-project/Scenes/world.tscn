@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://ckavqb25bdaul"]
+[gd_scene load_steps=33 format=3 uid="uid://ckavqb25bdaul"]
 
 [ext_resource type="ArrayMesh" uid="uid://oxvhfb3u0fke" path="res://Models/grass.res" id="1_5v1tr"]
 [ext_resource type="Script" uid="uid://3juowod54gdk" path="res://Scripts/WorldArea.gd" id="1_7yui6"]
@@ -10,10 +10,11 @@
 [ext_resource type="PackedScene" uid="uid://co17webl6iwl0" path="res://Models/CliffProps/cliffProps4.glb" id="6_0fj1v"]
 [ext_resource type="PackedScene" uid="uid://b0yes6731b4cr" path="res://Models/CliffProps/cliffProps5.glb" id="7_ikia7"]
 [ext_resource type="PackedScene" uid="uid://db6dwmakt0k1o" path="res://Scenes/tree.tscn" id="8_k7acu"]
-[ext_resource type="PackedScene" uid="uid://bb4ts31g2i5tn" path="res://Scripts/change_area.tscn" id="11_7yui6"]
+[ext_resource type="PackedScene" uid="uid://bb4ts31g2i5tn" path="res://Scenes/change_area.tscn" id="11_7yui6"]
 [ext_resource type="PackedScene" uid="uid://bcb1wsrbb3jam" path="res://Objects/respawner.tscn" id="11_ikia7"]
 [ext_resource type="PackedScene" uid="uid://1thhgrrd8qyq" path="res://Models/tavernprops/crate.glb" id="13_c5t2i"]
 [ext_resource type="PackedScene" uid="uid://hxlqajfh2lnc" path="res://Models/tavernprops/torch.glb" id="14_e0ngr"]
+[ext_resource type="PackedScene" uid="uid://dihi6vh4wh3rc" path="res://Scenes/tent.tscn" id="15_kn0ld"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_7yui6"]
 size = Vector3(5, 1, 5)
@@ -1174,6 +1175,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.438599, 0, 12.8711605)
 [node name="Respawner" parent="enemys" instance=ExtResource("11_ikia7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15.059894)
 
+[node name="Respawner3" parent="enemys" instance=ExtResource("11_ikia7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3890047, 0, 6.6263895)
+
+[node name="Respawner4" parent="enemys" instance=ExtResource("11_ikia7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1823087, 0, 12.401887)
+
+[node name="Respawner5" parent="enemys" instance=ExtResource("11_ikia7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.010661, 0, 20.613998)
+
+[node name="Respawner6" parent="enemys" instance=ExtResource("11_ikia7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.524553, 0, 4.8091936)
+
 [node name="ChangeArea2" parent="." instance=ExtResource("11_7yui6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.847636, 0, -11.606899)
 scene_path = "res://Scenes/Tavern.tscn"
@@ -1198,3 +1211,9 @@ transform = Transform3D(0.91981477, -0.39235324, 0, 0.39235324, 0.91981477, 0, 0
 
 [node name="crate2" parent="odds and ends" instance=ExtResource("13_c5t2i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.272441, 0.028210878, -12.328113)
+
+[node name="Tent" parent="." instance=ExtResource("15_kn0ld")]
+transform = Transform3D(-0.76323783, 0, 1.8486395, 0, 2, 0, -1.8486395, 0, -0.76323783, -7.4137588, 1.1008208, 16.670517)
+
+[node name="Tent2" parent="." instance=ExtResource("15_kn0ld")]
+transform = Transform3D(-0.9863354, 0, -1.7398685, 0, 2, 0, 1.7398685, 0, -0.9863354, 21.656279, 1.1008208, 14.933893)

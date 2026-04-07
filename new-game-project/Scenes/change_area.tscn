@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bb4ts31g2i5tn"]
+
+[ext_resource type="Script" uid="uid://cr2t2go05smp7" path="res://Scripts/change_area.gd" id="1_1ok7w"]
+
+[node name="ChangeArea" type="Area3D"]
+script = ExtResource("1_1ok7w")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

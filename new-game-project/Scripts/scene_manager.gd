@@ -1,7 +1,7 @@
 class_name scene_manager
 extends Node
 
-var health
+var health: int = 0
 
 
 # --- LIFECYCLE ---
@@ -27,6 +27,12 @@ func remove_scene(tree_path: String) -> void:
 		return
 	
 	scene.queue_free()
+
+func add_to_health(amt: int) -> void:
+	health += amt
+
+func get_health() -> int:
+	return health
 
 func change_scene(old_tree_path: String, new_path: String) -> void:
 	add_scene(new_path)

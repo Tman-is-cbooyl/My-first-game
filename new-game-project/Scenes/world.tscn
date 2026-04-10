@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://ckavqb25bdaul"]
+[gd_scene load_steps=39 format=3 uid="uid://ckavqb25bdaul"]
 
 [ext_resource type="ArrayMesh" uid="uid://oxvhfb3u0fke" path="res://Models/grass.res" id="1_5v1tr"]
 [ext_resource type="Script" uid="uid://3juowod54gdk" path="res://Scripts/WorldArea.gd" id="1_7yui6"]
@@ -60,6 +60,24 @@ size = Vector3(1.5136719, 5, 22.938437)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ikia7"]
 size = Vector3(2.8096313, 3.5023193, 2.4734192)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kn0ld"]
+size = Vector3(1, 7.302414, 12.915039)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hgpy0"]
+size = Vector3(10.977051, 3.2235107, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t2t4p"]
+size = Vector3(1, 4.243164, 13.138123)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0pcbe"]
+size = Vector3(1, 3.6186523, 10.770996)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_axeuq"]
+size = Vector3(1, 3.0683594, 10.30481)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1cojt"]
+size = Vector3(14.382202, 3.8266602, 1)
 
 [sub_resource type="Environment" id="Environment_5v1tr"]
 background_mode = 1
@@ -165,9 +183,6 @@ navigation_mesh = SubResource("NavigationMesh_0fj1v")
 material_override = SubResource("StandardMaterial3D_5a7ea")
 mesh = SubResource("QuadMesh_8j60k")
 skeleton = NodePath("../..")
-
-[node name="tavern" parent="Floor/NavigationRegion3D" instance=ExtResource("2_go701")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.76956, 0.008583084, -17.023926)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
@@ -1094,6 +1109,30 @@ shape = SubResource("BoxShape3D_o06y3")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4888263, 1.2511597, 24.353996)
 shape = SubResource("BoxShape3D_ikia7")
 
+[node name="CollisionShape3D11" type="CollisionShape3D" parent="Cliffs"]
+transform = Transform3D(0.9999962, 0, -0.0027925223, 0, 1, 0, 0.0027925223, 0, 0.9999962, 24.071789, 0.31983185, 16.405148)
+shape = SubResource("BoxShape3D_kn0ld")
+
+[node name="CollisionShape3D12" type="CollisionShape3D" parent="Cliffs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.86574, 1.1117554, -23.940565)
+shape = SubResource("BoxShape3D_hgpy0")
+
+[node name="CollisionShape3D13" type="CollisionShape3D" parent="Cliffs"]
+transform = Transform3D(0.99602395, 0, -0.08908552, 0, 1, 0, 0.08908552, 0, 0.99602395, -23.662651, 1.621582, -18.25505)
+shape = SubResource("BoxShape3D_t2t4p")
+
+[node name="CollisionShape3D14" type="CollisionShape3D" parent="Cliffs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.889582, 1.3093262, 14.873996)
+shape = SubResource("BoxShape3D_0pcbe")
+
+[node name="CollisionShape3D15" type="CollisionShape3D" parent="Cliffs"]
+transform = Transform3D(0.9995261, 0.030782744, 0, -0.030782744, 0.9995261, 0, 0, 0, 1, 23.838675, 1.0336896, -15.17046)
+shape = SubResource("BoxShape3D_axeuq")
+
+[node name="CollisionShape3D16" type="CollisionShape3D" parent="Cliffs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.410702, 1.4133301, -23.989061)
+shape = SubResource("BoxShape3D_1cojt")
+
 [node name="Trees" type="Node3D" parent="."]
 
 [node name="Tree1" parent="Trees" instance=ExtResource("8_k7acu")]
@@ -1169,23 +1208,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.68059, 0, -21.497616)
 
 [node name="enemys" type="Node3D" parent="."]
 
-[node name="Respawner2" parent="enemys" instance=ExtResource("11_ikia7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.438599, 0, 12.8711605)
-
-[node name="Respawner" parent="enemys" instance=ExtResource("11_ikia7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15.059894)
-
 [node name="Respawner3" parent="enemys" instance=ExtResource("11_ikia7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3890047, 0, 6.6263895)
-
-[node name="Respawner4" parent="enemys" instance=ExtResource("11_ikia7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1823087, 0, 12.401887)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.7521, 0, 6.6263895)
 
 [node name="Respawner5" parent="enemys" instance=ExtResource("11_ikia7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.010661, 0, 20.613998)
-
-[node name="Respawner6" parent="enemys" instance=ExtResource("11_ikia7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.524553, 0, 4.8091936)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.023156, 0, 14.546427)
 
 [node name="ChangeArea2" parent="." instance=ExtResource("11_7yui6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.847636, 0, -11.606899)
@@ -1213,7 +1240,10 @@ transform = Transform3D(0.91981477, -0.39235324, 0, 0.39235324, 0.91981477, 0, 0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.272441, 0.028210878, -12.328113)
 
 [node name="Tent" parent="." instance=ExtResource("15_kn0ld")]
-transform = Transform3D(-0.76323783, 0, 1.8486395, 0, 2, 0, -1.8486395, 0, -0.76323783, -7.4137588, 1.1008208, 16.670517)
+transform = Transform3D(-0.5977371, 0, 0.8016922, 0, 1, 0, -0.8016922, 0, -0.5977371, -7.632865, 1.4172912, 16.35686)
 
 [node name="Tent2" parent="." instance=ExtResource("15_kn0ld")]
-transform = Transform3D(-0.9863354, 0, -1.7398685, 0, 2, 0, 1.7398685, 0, -0.9863354, 21.656279, 1.1008208, 14.933893)
+transform = Transform3D(-0.44288343, 0, -0.89657927, 0, 1, 0, 0.89657927, 0, -0.44288343, 19.663845, 1.4059684, 14.181577)
+
+[node name="tavern" parent="." instance=ExtResource("2_go701")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.76956, 0.008583084, -17.023926)

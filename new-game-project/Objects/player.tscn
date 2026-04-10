@@ -120,10 +120,10 @@ wait_time = 0.8
 [node name="HUD" type="CanvasLayer" parent="."]
 
 [node name="HP Bar" type="TextureProgressBar" parent="HUD"]
-offset_left = 2.0
-offset_top = 608.0
-offset_right = 243.0
-offset_bottom = 648.0
+offset_left = 11.0
+offset_top = 609.0
+offset_right = 252.0
+offset_bottom = 649.0
 texture_under = ExtResource("3_0ad8t")
 texture_progress = ExtResource("4_x20fu")
 

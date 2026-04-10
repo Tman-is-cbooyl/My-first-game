@@ -19,7 +19,6 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 	if state == States.idle:
-		print("idle")
 		velocity = Vector3(0, velocity.y, 0)
 		animationPlayer.play("Idle")
 	elif state == States.chase:
@@ -34,7 +33,6 @@ func _physics_process(delta):
 	elif state == States.attack:
 		look_at(Vector3(target.global_position.x, global_position.y, target.global_position.z), Vector3.UP, true)
 		animationPlayer.play("Punch")
-		print("attack")
 		velocity = Vector3.ZERO
 	elif state == States.die:
 		animationPlayer.play("Die")

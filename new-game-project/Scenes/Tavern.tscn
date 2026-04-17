@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://hxlqajfh2lnc" path="res://Models/tavernprops/torch.glb" id="6_tpy25"]
 [ext_resource type="PackedScene" uid="uid://c32a8dmh03qlo" path="res://Models/tavernprops/stool.glb" id="7_hm7uq"]
 [ext_resource type="PackedScene" uid="uid://6q3607hcbit" path="res://Models/tavernprops/counter.glb" id="10_mm7un"]
-[ext_resource type="PackedScene" uid="uid://c1b1mjgp5gvy5" path="res://Models/tavernprops/shelf.blend" id="11_8kk68"]
+[ext_resource type="PackedScene" uid="uid://bmxtg1xeq64ta" path="res://Models/enemy/shelf.blend" id="11_8kk68"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_5ebr1"]
 size = Vector3(1, 6, 11.9)
@@ -540,8 +540,8 @@ transform = Transform3D(-4.3711385e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, 
 
 [node name="Shelfs" type="Node3D" parent="Odds_and_ends"]
 
-[node name="shelf" parent="Odds_and_ends/Shelfs" instance=ExtResource("11_8kk68")]
-transform = Transform3D(-4.371139e-08, -8.742278e-08, -1, 0, -1, 8.742278e-08, -1, 3.821371e-15, 4.371139e-08, 4.5821896, 3.920212, 11.957317)
-
 [node name="shelf2" parent="Odds_and_ends/Shelfs" instance=ExtResource("11_8kk68")]
-transform = Transform3D(4.371139e-08, -3.821371e-15, 1, -8.742278e-08, -1, 0, 1, -8.742278e-08, -4.371139e-08, -5.272781, 3.920212, 12.143477)
+transform = Transform3D(4.3710163e-08, 0.0074874535, 0.9999719, 3.2728698e-10, -0.9999719, 0.0074874535, 1, 0, -4.371139e-08, -5.2658463, 3.9612718, 12)
+
+[node name="shelf3" parent="Odds_and_ends/Shelfs" instance=ExtResource("11_8kk68")]
+transform = Transform3D(-0.0015359856, -0.007487444, -0.9999707, 3.1053202e-10, -0.9999719, 0.007487453, -0.9999988, 1.1500379e-05, 0.0015359521, 4.595731, 3.9612718, 12)

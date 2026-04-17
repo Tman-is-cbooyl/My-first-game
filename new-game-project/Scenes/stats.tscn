@@ -60,6 +60,33 @@ layout_mode = 2
 text = "5"
 
 [node name="Strength" type="VBoxContainer" parent="PanelContainer/MarginContainer/ScrollContainer"]
+custom_minimum_size = Vector2(1111, 0)
 layout_mode = 2
+size_flags_horizontal = 0
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/ScrollContainer/Strength"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/ScrollContainer/Strength/HBoxContainer"]
+layout_mode = 2
+text = "STRENGTH"
+
+[node name="Minus" type="Button" parent="PanelContainer/MarginContainer/ScrollContainer/Strength/HBoxContainer"]
+layout_mode = 2
+text = "-"
+
+[node name="Amount" type="Label" parent="PanelContainer/MarginContainer/ScrollContainer/Strength/HBoxContainer"]
+layout_mode = 2
+text = "1"
+
+[node name="Plus" type="Button" parent="PanelContainer/MarginContainer/ScrollContainer/Strength/HBoxContainer"]
+layout_mode = 2
+text = "+"
+
+[node name="Total" type="Label" parent="PanelContainer/MarginContainer/ScrollContainer/Strength/HBoxContainer"]
+layout_mode = 2
+text = "5"
 
 [connection signal="pressed" from="PanelContainer/MarginContainer/ScrollContainer/Health/HBoxContainer/Minus" to="." method="_on_health_minus_pressed"]

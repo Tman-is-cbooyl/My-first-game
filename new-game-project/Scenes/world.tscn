@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://ckavqb25bdaul"]
+[gd_scene load_steps=40 format=3 uid="uid://ckavqb25bdaul"]
 
 [ext_resource type="ArrayMesh" uid="uid://oxvhfb3u0fke" path="res://Models/grass.res" id="1_5v1tr"]
 [ext_resource type="Script" uid="uid://3juowod54gdk" path="res://Scripts/WorldArea.gd" id="1_7yui6"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dcdu262s42frd" path="res://Models/CliffProps/cliffProps2.glb" id="4_k7acu"]
 [ext_resource type="PackedScene" uid="uid://dhm5mqi1417w1" path="res://Models/CliffProps/cliffProps3.glb" id="5_5v1tr"]
 [ext_resource type="PackedScene" uid="uid://co17webl6iwl0" path="res://Models/CliffProps/cliffProps4.glb" id="6_0fj1v"]
+[ext_resource type="PackedScene" uid="uid://dygmfqrowr484" path="res://Models/enemy/Duck.blend" id="7_hgpy0"]
 [ext_resource type="PackedScene" uid="uid://b0yes6731b4cr" path="res://Models/CliffProps/cliffProps5.glb" id="7_ikia7"]
 [ext_resource type="PackedScene" uid="uid://db6dwmakt0k1o" path="res://Scenes/tree.tscn" id="8_k7acu"]
 [ext_resource type="PackedScene" uid="uid://bb4ts31g2i5tn" path="res://Scenes/change_area.tscn" id="11_7yui6"]
@@ -1187,7 +1188,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.441713, -0.017912626, -6.9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.768324, -0.017914534, 1.5072632)
 
 [node name="Tree18" parent="Trees" instance=ExtResource("8_k7acu")]
-transform = Transform3D(0.99970365, 0.024344938, 0, -0.024344938, 0.99970365, 0, 0, 0, 1, 19.499926, 0.45907235, 0.59802914)
+transform = Transform3D(0.99970365, 0.024344938, 0, -0.024344938, 0.99970365, 0, 0, 0, 1, 19.499926, 0.9181262, 0.59802914)
 
 [node name="Tree19" parent="Trees" instance=ExtResource("8_k7acu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.615992, -0.017914534, 10.961315)
@@ -1247,3 +1248,6 @@ transform = Transform3D(-0.44288343, 0, -0.89657927, 0, 1, 0, 0.89657927, 0, -0.
 
 [node name="tavern" parent="." instance=ExtResource("2_go701")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.76956, 0.008583084, -17.023926)
+
+[node name="Duck" parent="." instance=ExtResource("7_hgpy0")]
+transform = Transform3D(0.12808594, 0, -0.99176306, 0, 1, 0, 0.99176306, 0, 0.12808594, 19.42583, 0.2044524, 0.6016522)

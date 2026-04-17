@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://b7jqp4wvkg7ju"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_urdfs"]
+vertices = PackedVector3Array(-37, 1, -37, -37, 1, 37, 37, 1, 37, 37, 1, -37)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+
+[sub_resource type="BoxMesh" id="BoxMesh_5sxfj"]
+size = Vector3(75, 1, 75)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ax60m"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ycwjk"]
+size = Vector3(75, 1, 75)
+
+[node name="boss arena" type="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.175621, 0, -11.0703125)
+navigation_mesh = SubResource("NavigationMesh_urdfs")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_5sxfj")
+surface_material_override/0 = SubResource("StandardMaterial3D_ax60m")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.44143677, 0, 0)
+shape = SubResource("BoxShape3D_ycwjk")

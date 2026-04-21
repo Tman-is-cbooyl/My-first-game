@@ -1,4 +1,4 @@
-[gd_scene load_steps=96 format=3 uid="uid://cmfsjec84hcqu"]
+[gd_scene load_steps=97 format=3 uid="uid://cmfsjec84hcqu"]
 
 [ext_resource type="Script" uid="uid://3juowod54gdk" path="res://Scripts/WorldArea.gd" id="1_ofyxu"]
 [ext_resource type="PackedScene" uid="uid://d00gyfo0xr487" path="res://Objects/player.tscn" id="2_2ngrw"]
@@ -277,6 +277,9 @@ size = Vector3(442.9989, 0.35009766, 380.29428)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2ngrw"]
 size = Vector3(3.2459717, 2.7931824, 0.942749)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yhk1u"]
+size = Vector3(11.706423, 5.0253983, 0.001)
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_ofyxu")
@@ -24049,5 +24052,13 @@ transform = Transform3D(-0.97752297, 0.015213518, -0.21027917, 0.01445841, 0.999
 
 [node name="Tent13" parent="Tents" instance=ExtResource("12_q4rbn")]
 transform = Transform3D(0.3342675, 0, -0.94247824, 0.01445841, 0.99988234, 0.005127945, 0.9423673, -0.015340842, 0.33422816, 124.24961, 1.8342868, -238.3452)
+
+[node name="ChangeArea2" parent="." instance=ExtResource("4_ofyxu")]
+transform = Transform3D(-0.011815555, 0, 0.9999302, 0, 1, 0, -0.9999302, 0, -0.011815555, -83.71385, 0, -320.81393)
+scene_path = "res://Scenes/end_game.tscn"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ChangeArea2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.042393, 2.4143562, -0.1244297)
+shape = SubResource("BoxShape3D_yhk1u")
 
 [editable path="Walls/Corners/Corners4"]

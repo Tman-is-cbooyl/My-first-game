@@ -4,6 +4,9 @@ extends CharacterBody3D
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 const SPRINT_MULT: float = 2.0
+const INPUT_COOLDOWN: float = 0.01
+
+var input_cool: float = 0.01
 
 var sensivity = 0.003
 var onCooldown = false
@@ -22,13 +25,13 @@ var start: Vector3
 @onready var animationPlayer = $AnimationPlayer
 @onready var cooldown = $AttackCoolDown
 
+var main: Node
+
 func _ready():
+	main = SceneManagerControl.get_mainframe(self)
 	start = self.position
 	hpBar.max_value = 100
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-
-func player():
-	pass
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
@@ -36,13 +39,40 @@ func _unhandled_input(event):
 		camera.rotate_x(-event.relative.y * sensivity)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-60), deg_to_rad(70))
 
-func _process(_delta):
+func player():
+	pass
+
+func _process(delta):
+	handle_input(delta)
 	update_HUD()
 	attack()
 	if Input.is_action_just_pressed("escape"):
 		get_tree().quit()
 	if hp <= 0:
 		die()
+
+func handle_input(delta: float) -> void:
+	if input_cool > 0.0:
+		input_cool -= 1.0 * delta
+		if input_cool < 0.0:
+			input_cool = 0.0
+	if input_cool == 0:
+		if Input.is_action_just_pressed("stats"):
+			if get_node_or_null("Stats") == null:
+				var stats_instance: PackedScene = load("res://Scenes/stats.tscn")
+				var stats := stats_instance.instantiate()
+				stats.name = "Stats"
+				add_child(stats)
+				Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+				input_cool = INPUT_COOLDOWN
+			else:
+				get_node_or_null("Stats").queue_free()
+				Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+			
+
+func update_stats() -> void:
+	maxHP = main.get_health() * 25
+	damage = main.get_strength() * 10
 
 func die():
 	gold -= 5
@@ -64,6 +94,7 @@ func attack():
 
 func update_HUD():
 	hpBar.value = hp
+	hpBar.max_value = maxHP
 	goldLable.text = str(gold)
 
 func _physics_process(delta: float) -> void:

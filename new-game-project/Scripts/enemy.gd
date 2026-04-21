@@ -12,10 +12,13 @@ var target = null
 var damage = 10
 var value = 15
 
+var main: Node
+
 @export var navAgent : NavigationAgent3D
 @export var animationPlayer : AnimationPlayer
 
 func _physics_process(delta):
+	main = SceneManagerControl.get_mainframe(self)
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 	if state == States.idle:
@@ -48,7 +51,7 @@ func _process(_delta):
 		state = States.die
 
 func give_loot():
-	target.gold += value
+	target.gold += value * main.get_coin_mult()
 
 func attack():
 	target.hp -= damage

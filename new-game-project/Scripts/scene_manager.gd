@@ -1,6 +1,9 @@
 class_name scene_manager
 extends Node
 
+var player_health: int = 100
+var player_coins: int = 0
+
 var health: int = 1
 var strength: int = 1
 var coin_mult: int = 1
@@ -52,6 +55,16 @@ func add_to_coin_mult(amt: int) -> void:
 
 func get_coin_mult() -> int:
 	return coin_mult
+
+func set_player_info(hp: int, coins: int):
+	player_health = hp
+	player_coins = coins
+
+func get_player_health() -> int:
+	return player_health
+
+func get_player_coins() -> int:
+	return player_coins
 
 func change_scene(old_tree_path: String, new_path: String) -> void:
 	add_scene(new_path)

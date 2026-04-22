@@ -30,8 +30,15 @@ var main: Node
 func _ready():
 	main = SceneManagerControl.get_mainframe(self)
 	start = self.position
-	hpBar.max_value = 100
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	update_stats()
+	hp = main.call("get_player_health")
+	gold = main.call("get_player_coins")
+	hpBar.max_value = maxHP
+	hpBar.value = hp
+	if hp > maxHP:
+		hp = maxHP
+	
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
@@ -44,12 +51,19 @@ func player():
 
 func _process(delta):
 	handle_input(delta)
-	update_HUD()
 	attack()
 	if Input.is_action_just_pressed("escape"):
 		get_tree().quit()
 	if hp <= 0:
 		die()
+	main.call("set_player_info", hp, gold)
+	if hp < maxHP:
+		hp += 5 * delta
+		if hp > maxHP:
+			hp = maxHP
+	update_HUD()
+	hpBar.max_value = maxHP
+	hpBar.value = hp
 
 func handle_input(delta: float) -> void:
 	if input_cool > 0.0:
@@ -82,6 +96,12 @@ func die():
 	hp = maxHP
 	position = start
 
+func get_gold() -> int:
+	return gold
+
+func add_gold(amt: int):
+	gold += amt
+
 func deal_damage():
 	for enemies in target:
 		enemies.hp -= damage
@@ -93,8 +113,6 @@ func attack():
 		cooldown.start()
 
 func update_HUD():
-	hpBar.value = hp
-	hpBar.max_value = maxHP
 	goldLable.text = str(gold)
 
 func _physics_process(delta: float) -> void:

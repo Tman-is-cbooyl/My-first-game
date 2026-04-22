@@ -4,6 +4,7 @@ extends CharacterBody3D
 enum States{attack, idle, chase, die}
 
 var state = States.idle
+var death_cooldown: float = 2.5
 var hp = 20
 var speed = 2
 var accel = 10
@@ -46,9 +47,17 @@ func _physics_process(delta):
 func enemy():
 	pass
 
-func _process(_delta):
+func _process(delta):
 	if hp <= 0:
 		state = States.die
+	
+	if state == States.die:
+		if death_cooldown > 0:
+			death_cooldown -= 1 * delta
+			if death_cooldown < 0:
+				death_cooldown = 0
+		if death_cooldown == 0:
+			queue_free()
 
 func give_loot():
 	target.gold += value * main.get_coin_mult()

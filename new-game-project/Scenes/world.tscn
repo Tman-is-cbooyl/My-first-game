@@ -1251,3 +1251,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.76956, 0.008583084, -17.023
 
 [node name="Duck" parent="." instance=ExtResource("7_hgpy0")]
 transform = Transform3D(0.12808594, 0, -0.99176306, 0, 1, 0, 0.99176306, 0, 0.12808594, 19.42583, 0.2044524, 0.6016522)
+
+[node name="ChangeArea3" parent="." instance=ExtResource("11_7yui6")]
+transform = Transform3D(-0.011187337, 0, -0.99993753, 0, 1, 0, 0.99993753, 0, -0.011187337, 7.805212, 4.268261, -15.066274)
+scene_path = "res://Scenes/end_game.tscn"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ChangeArea3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8853507, 1.5189743, -0.1244297)
+shape = SubResource("BoxShape3D_c5t2i")
